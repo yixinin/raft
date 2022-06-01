@@ -37,7 +37,7 @@ type logEntryFile struct {
 
 func openLogEntryFile(dir string, name logFileName, isLastOne bool) (*logEntryFile, error) {
 	p := path.Join(dir, name.String())
-	f, err := os.OpenFile(p, os.O_RDWR|os.O_APPEND, 0600)
+	f, err := os.OpenFile(p, os.O_RDWR|os.O_APPEND, 666)
 	if err != nil {
 		return nil, err
 	}
@@ -78,7 +78,7 @@ func openLogEntryFile(dir string, name logFileName, isLastOne bool) (*logEntryFi
 
 func createLogEntryFile(dir string, name logFileName) (*logEntryFile, error) {
 	p := path.Join(dir, name.String())
-	f, err := os.OpenFile(p, os.O_RDWR|os.O_CREATE|os.O_TRUNC|os.O_APPEND, 0600)
+	f, err := os.OpenFile(p, os.O_RDWR|os.O_CREATE|os.O_TRUNC|os.O_APPEND, 666)
 	if err != nil {
 		return nil, err
 	}
