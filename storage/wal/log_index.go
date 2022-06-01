@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/tiglabs/raft/proto"
+	"github.com/yixinin/raft/proto"
 )
 
 const indexItemSize = 8 + 8 + 4

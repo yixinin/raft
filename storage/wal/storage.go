@@ -19,9 +19,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/tiglabs/raft/logger"
-	"github.com/tiglabs/raft/proto"
-	"github.com/tiglabs/raft/util/log"
+	"github.com/yixinin/raft/logger"
+	"github.com/yixinin/raft/proto"
+	"github.com/yixinin/raft/util/log"
 )
 
 // Storage the storage

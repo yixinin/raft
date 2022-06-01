@@ -15,7 +15,7 @@
 package raft
 
 import (
-	"github.com/tiglabs/raft/proto"
+	"github.com/yixinin/raft/proto"
 )
 
 // Transport raft server transport

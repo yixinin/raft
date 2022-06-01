@@ -17,7 +17,7 @@ package bufalloc
 import (
 	"sync"
 
-	"github.com/tiglabs/raft/util"
+	"github.com/yixinin/raft/util"
 )
 
 const (

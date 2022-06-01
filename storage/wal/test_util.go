@@ -19,7 +19,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/tiglabs/raft/proto"
+	"github.com/yixinin/raft/proto"
 )
 
 func compapreEntry(le, re *proto.Entry) error {

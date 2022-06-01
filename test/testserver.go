@@ -24,9 +24,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/tiglabs/raft"
-	"github.com/tiglabs/raft/proto"
-	"github.com/tiglabs/raft/storage"
+	"github.com/yixinin/raft"
+	"github.com/yixinin/raft/proto"
+	"github.com/yixinin/raft/storage"
 )
 
 var (

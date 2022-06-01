@@ -18,7 +18,7 @@ package logger
 import (
 	"fmt"
 
-	"github.com/tiglabs/raft/util/log"
+	"github.com/yixinin/raft/util/log"
 )
 
 // Logger encapsulation the log interface.

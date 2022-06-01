@@ -16,7 +16,7 @@ package wal
 
 import (
 	"github.com/google/btree"
-	"github.com/tiglabs/raft/proto"
+	"github.com/yixinin/raft/proto"
 )
 
 type cacheItem proto.Entry

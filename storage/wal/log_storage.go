@@ -21,8 +21,8 @@ import (
 
 	"math"
 
-	"github.com/tiglabs/raft/proto"
-	"github.com/tiglabs/raft/util/log"
+	"github.com/yixinin/raft/proto"
+	"github.com/yixinin/raft/util/log"
 )
 
 type logEntryStorage struct {

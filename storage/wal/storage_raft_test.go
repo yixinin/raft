@@ -25,8 +25,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tiglabs/raft"
-	"github.com/tiglabs/raft/proto"
+	"github.com/yixinin/raft"
+	"github.com/yixinin/raft/proto"
 )
 
 type raftAddr struct {

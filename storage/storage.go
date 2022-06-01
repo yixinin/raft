@@ -16,7 +16,7 @@
 package storage
 
 import (
-	"github.com/tiglabs/raft/proto"
+	"github.com/yixinin/raft/proto"
 )
 
 // Storage is an interface that may be implemented by the application to retrieve log entries from storage.

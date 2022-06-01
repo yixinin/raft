@@ -26,11 +26,11 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/syndtr/goleveldb/leveldb"
 	"github.com/syndtr/goleveldb/leveldb/opt"
-	"github.com/tiglabs/raft"
-	"github.com/tiglabs/raft/logger"
-	"github.com/tiglabs/raft/proto"
-	"github.com/tiglabs/raft/storage/wal"
-	"github.com/tiglabs/raft/util/log"
+	"github.com/yixinin/raft"
+	"github.com/yixinin/raft/logger"
+	"github.com/yixinin/raft/proto"
+	"github.com/yixinin/raft/storage/wal"
+	"github.com/yixinin/raft/util/log"
 )
 
 // DefaultClusterID the default cluster id, we have only one raft cluster

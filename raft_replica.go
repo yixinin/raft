@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/tiglabs/raft/proto"
-	"github.com/tiglabs/raft/util"
+	"github.com/yixinin/raft/proto"
+	"github.com/yixinin/raft/util"
 )
 
 // replication represents a follower’s progress of replicate in the view of the leader.

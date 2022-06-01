@@ -18,7 +18,7 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/tiglabs/raft/util/log"
+	"github.com/yixinin/raft/util/log"
 )
 
 var nodeID = flag.Uint64("node", 0, "current node id")

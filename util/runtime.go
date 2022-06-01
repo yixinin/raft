@@ -19,7 +19,7 @@ import (
 	"runtime"
 	"runtime/debug"
 
-	"github.com/tiglabs/raft/logger"
+	"github.com/yixinin/raft/logger"
 )
 
 func HandleCrash(handlers ...func(interface{})) {

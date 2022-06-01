@@ -18,7 +18,7 @@ package raft
 import (
 	"fmt"
 
-	"github.com/tiglabs/raft/logger"
+	"github.com/yixinin/raft/logger"
 )
 
 // ReadOnlyOption read only option

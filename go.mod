@@ -1,4 +1,4 @@
-module github.com/tiglabs/raft
+module github.com/yixinin/raft
 
 go 1.18
 

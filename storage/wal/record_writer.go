@@ -18,8 +18,8 @@ import (
 	"encoding/binary"
 	"os"
 
-	"github.com/tiglabs/raft/util"
-	"github.com/tiglabs/raft/util/bufalloc"
+	"github.com/yixinin/raft/util"
+	"github.com/yixinin/raft/util/bufalloc"
 )
 
 const initialBufferSize = 1024 * 32

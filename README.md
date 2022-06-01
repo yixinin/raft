@@ -6,7 +6,7 @@ A multi-raft implementation built on top of the [CoreOS etcd raft library](https
 
 Download and install to `GOPATH`:
 ```bash
-go get -u github.com/tiglabs/raft
+go get -u github.com/yixinin/raft
 ```
 
 ## Features

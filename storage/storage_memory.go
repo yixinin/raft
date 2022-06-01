@@ -18,9 +18,9 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/tiglabs/raft/logger"
-	"github.com/tiglabs/raft/proto"
-	"github.com/tiglabs/raft/util"
+	"github.com/yixinin/raft/logger"
+	"github.com/yixinin/raft/proto"
+	"github.com/yixinin/raft/util"
 )
 
 type fsm interface {

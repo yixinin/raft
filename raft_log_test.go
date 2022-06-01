@@ -18,8 +18,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/tiglabs/raft/proto"
-	"github.com/tiglabs/raft/storage"
+	"github.com/yixinin/raft/proto"
+	"github.com/yixinin/raft/storage"
 )
 
 func TestFindConflict(t *testing.T) {
