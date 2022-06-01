@@ -50,7 +50,7 @@ type metaFile struct {
 }
 
 func openMetaFile(dir string) (mf *metaFile, hs proto.HardState, meta truncateMeta, err error) {
-	f, err := os.OpenFile(path.Join(dir, "META"), os.O_RDWR|os.O_CREATE, 0666)
+	f, err := os.OpenFile(path.Join(dir, "META"), os.O_RDWR|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		return
 	}
