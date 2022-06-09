@@ -100,5 +100,16 @@ func fallocDegraded(f *os.File, sizeInBytes int64) error {
 	if sizeInBytes > size {
 		return nil
 	}
-	return f.Truncate(sizeInBytes)
+	var filename = f.Name()
+	_ = f.Close()
+	err = os.Truncate(filename, sizeInBytes)
+	if err != nil {
+		return err
+	}
+	nf, err := os.OpenFile(filename, os.O_CREATE|os.O_APPEND, 0600)
+	if err != nil {
+		return err
+	}
+	*f = *nf
+	return nil
 }

@@ -17,6 +17,7 @@ package wal
 import (
 	"encoding/binary"
 	"os"
+	"sync"
 
 	"github.com/yixinin/raft/util"
 	"github.com/yixinin/raft/util/bufalloc"
@@ -26,6 +27,7 @@ const initialBufferSize = 1024 * 32
 const flushTriggerSize = 1024 * 1024
 
 type recordWriter struct {
+	sync.Mutex
 	f      *os.File
 	buf    bufalloc.Buffer
 	u64Buf []byte
@@ -42,6 +44,8 @@ func newRecordWriter(f *os.File) *recordWriter {
 }
 
 func (w *recordWriter) Write(recType recordType, data recordData) error {
+	w.Lock()
+	defer w.Unlock()
 	if w.buf == nil {
 		w.buf = bufalloc.AllocBuffer(initialBufferSize)
 	}
@@ -84,11 +88,21 @@ func (w *recordWriter) Offset() int64 {
 }
 
 func (w *recordWriter) Truncate(offset int64) error {
-	if err := w.f.Truncate(offset); err != nil {
+	w.Lock()
+	defer w.Unlock()
+	var filename = w.f.Name()
+	w.f.Close()
+	err := os.Truncate(filename, offset)
+	if err != nil {
 		return err
 	}
+	f, err := os.OpenFile(filename, os.O_CREATE|os.O_APPEND, 0600)
+	if err != nil {
+		return err
+	}
+	*w.f = *f
 	w.offset = offset
-	_, err := w.f.Seek(offset, os.SEEK_SET)
+	_, err = w.f.Seek(offset, os.SEEK_SET)
 	return err
 }
 
