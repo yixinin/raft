@@ -87,25 +87,6 @@ func (w *recordWriter) Offset() int64 {
 	return w.offset
 }
 
-func (w *recordWriter) Truncate(offset int64) error {
-	w.Lock()
-	defer w.Unlock()
-	var filename = w.f.Name()
-	w.f.Close()
-	err := os.Truncate(filename, offset)
-	if err != nil {
-		return err
-	}
-	f, err := os.OpenFile(filename, os.O_CREATE|os.O_APPEND, 0600)
-	if err != nil {
-		return err
-	}
-	*w.f = *f
-	w.offset = offset
-	_, err = w.f.Seek(offset, os.SEEK_SET)
-	return err
-}
-
 func (w *recordWriter) Flush() error {
 	if w.buf != nil && w.buf.Len() > 0 {
 		_, err := w.buf.WriteTo(w.f)
